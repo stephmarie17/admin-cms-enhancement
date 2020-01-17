@@ -20,18 +20,30 @@ function handleFileLoad(event) {
     document.getElementById('file').textContent = event.target.result;
     const data = Papa.parse(event.target.result);
     messages.push(data);
+    console.log(messages);
 }
 
 // Gets relevant data from CSV in order to apply styling for preview
-function previewEpisode() {
-    let conversationArray = messages[0].data;
+async function previewEpisode() {
+    try {
+        let conversationArray = messages[0].data;
 
-    for (element of conversationArray) {
-        characters.push(element[0]);
-        dialog.push(element[1]);
+        for (element of conversationArray) {
+            characters.push(element[0]);
+            dialog.push(element[1]);
+            
+        }
+        console.log(characters)
+        const response = $.ajax("/api/ChatStories/episode-csv-import", {
+            type: "POST",
+            data: {characters}
+        })
+        console.log(response.data);
     }
-
-    displayUpload();
+    catch (err) {
+        console.log(err)
+    }
+    
 };
 
 function displayUpload() {
