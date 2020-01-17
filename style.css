@@ -2,6 +2,10 @@
     border-radius: 0rem;
 }
 
+.ui.inverted.menu .item:before {
+    background: transparent;
+}
+
 .ui.card {
     border-radius: 0rem;
 }

@@ -10,7 +10,7 @@
 </head>
 <body>
 
-<div class="ui inverted menu">
+<div class="ui sticky inverted fixed menu">
     <div class="header item">
         Yarn
     </div>
@@ -40,10 +40,33 @@
     </div>
 </div>
 
+<div class="ui demo vertical inverted sidebar visible labeled menu left">
+    <a class="item">
+        <i class="user outline icon"></i>
+        People
+    </a>
+    <a class="item">
+        <i class="server icon"></i>
+        Episode List
+    </a>
+    <a class="item">
+        <i class="mobile alternate icon"></i>
+        Episodes
+    </a>
+    <a class="item">
+        <i class="smile icon"></i>
+        Reviews
+    </a>
+    <a class="item">
+        <i class="microphone icon"></i>
+        Translations
+    </a>
+</div>
+
 <div class="ui grid">    
     <div class="one wide column"></div>
     <div class="eight wide column">
-        <div class="ui card" style="width: 100%; margin-top: 35px">
+        <div class="ui card" style="width: 100%; margin-top: 75px">
             <div class="content">
                 <div class="header">+ Add an Episode</div>
             </div>
@@ -144,15 +167,15 @@
     </div>
     <div class="one wide column"></div>
     <div class="four wide column">
-        <h2 style="margin-top: 35px">Episode Preview</h2>
-        <div class="ui card" style="width: 100%; margin-top: 35px; background-color: #333333; color: white">
+        <h2 style="margin-top: 75px">Episode Preview</h2>
+        <div class="ui card" style="width: 100%; margin-top: 25px; background-color: #333333; color: white">
             <p>Upload a file and click "Preview Episode"</p>
         </div>
     </div>
     <div class="two wide column"></div>
 </div>
 
-
+<script src="server.js"></script>
 
 </body>
 </html>
