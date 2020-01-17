@@ -34,11 +34,14 @@ async function previewEpisode() {
             
         }
         console.log(characters)
-        const response = $.ajax("/api/ChatStories/episode-csv-import", {
+        $.ajax("/api/ChatStories/episode-csv-import", {
             type: "POST",
-            data: {characters}
+            data: {characters},
+            success:  function(response){
+                console.log("response from ajax call");
+                console.log(response);
+             }
         })
-        console.log(response.data);
     }
     catch (err) {
         console.log(err)
