@@ -26,13 +26,14 @@ request({
         Authorization: 'ocKE1WN6EE3aSi3olODQxhP1qPUByw3oksOSOvKrjF0I0EofhYCkKAgWe6b1ivaH'
     }
 },
-    function(err, res, body) {
+    function(err, _, body) {
         console.log(err);
         // console.log(res);
         data = JSON.parse(body);
-        // console.log(data);
+        console.log(data);
         // console.log(data[0].chatStoryPeople);
-        getCharacterStyles();
+        var results = getCharacterStyles();
+        res.json(results);
 
     });
 
