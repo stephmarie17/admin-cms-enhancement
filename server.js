@@ -32,13 +32,6 @@ const routes = require("./controllers/preview");
 
 app.use(routes);
 
-// app.get('/api/ChatStories/episode-csv-import', function(req, res){
-//     console.log("getting in server!");
-//     console.log(req.body);
-// })
-
-
-
 
 app.listen(PORT, function() {
     console.log("Server listening on: http://localhost:" + PORT);

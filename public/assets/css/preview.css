@@ -3,3 +3,12 @@
     color: #242424;
     border-radius: 10px;
 }
+#preview-texts {
+    max-height: 78.5vh;
+    overflow-x: scroll;
+}
+#preview-texts::-webkit-scrollbar {
+    width: 0px;  /* Remove scrollbar space */
+    height:0px;
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}

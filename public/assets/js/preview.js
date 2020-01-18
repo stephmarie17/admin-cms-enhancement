@@ -39,7 +39,9 @@ async function previewEpisode() {
             data: {characters},
             success:  function(response){
                 console.log("response from ajax call");
-                console.log(response);
+                displayUpload(response);
+                //Reset it here
+                characters = [];
              }
         })
     }
@@ -49,18 +51,19 @@ async function previewEpisode() {
     
 };
 
-function displayUpload() {
-    for (var i = 0; i < characters.length; i ++) {
-        let pOne = document.createElement("p");
-        let textChar = document.createTextNode(characters[i] + ": ");
+function displayUpload(characterStyles) {
+    const previewContainer = document.getElementById('preview-texts');
+    previewContainer.innerHTML = '';
+    for (var i = 0; i < characterStyles.length; i ++) {
+        const textChar = document.createTextNode(characterStyles[i].title + ": ");
+        const pOne = document.createElement("p");
         pOne.classList.add("initial-icon");
         pOne.appendChild(textChar);
-        let pTwo = document.createElement("p");
-        let textMessage = document.createTextNode(dialog[i]);
+        const textMessage = document.createTextNode(dialog[i]);
+        const pTwo = document.createElement("p");
         pTwo.appendChild(textMessage);
-        pTwo.setAttribute("style", "background-color: blue");
-        document.getElementById('preview-texts').appendChild(pOne);
-        document.getElementById('preview-texts').appendChild(pTwo);
+        pTwo.setAttribute("style", `background-color: #${characterStyles[i].bubbleColor}`);
+        previewContainer.appendChild(pOne).appendChild(pTwo);
     }
 };
 
