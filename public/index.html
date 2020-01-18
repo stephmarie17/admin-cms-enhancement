@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Preview</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.css">
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/preview.css">
 </head>
 <body>
 
@@ -141,8 +142,10 @@
                 <div class="content">
                     <div class="header">
                         <h4>+ Add Content - CSV</h4>
-                        <button class="ui green button">Choose File</button>
-                        <button class="ui grey button">Upload CSV</button>
+                        <label for="file">Upload CSV</label>
+                        <input type="file" id="file" name="file">
+                        <!-- <button class="ui green button">Choose File</button> -->
+                        <button class="ui grey button" id="upload">Upload CSV</button>
                     </div>
                 </div>
                 <div class="ui horizontal divider"></div>
@@ -165,7 +168,7 @@
                 <div class="ui horizontal divider"></div>
                 <div class="content">
                     <div class="header">
-                        <button class="ui green button">Preview</button>
+                        <button class="ui green button" id="preview">Preview</button>
                         <button class="ui red button">Submit</button>
                     </div>
                 </div>
@@ -174,15 +177,26 @@
     </div>
     <div class="one wide column"></div>
     <div class="four wide column">
+<<<<<<< HEAD:index.html
         <h2 style="margin-top: 75px">Episode Preview</h2>
         <div class="ui card" style="width: 100%; margin-top: 25px; background-color: #333333; color: white">
+=======
+        <h2 style="margin-top: 35px">Episode Preview</h2>
+        <div class="ui card" style="width: 100%; margin-top: 35px; background-color: #333333; color: white" id="preview-texts">
+>>>>>>> 097323b32bcd0ca540907c8962281835056307d6:public/index.html
             <p>Upload a file and click "Preview Episode"</p>
         </div>
     </div>
     <div class="two wide column"></div>
 </div>
+<<<<<<< HEAD:index.html
 
 <script src="server.js"></script>
+=======
+<script src="https://code.jquery.com/jquery.js"></script>
+<script src="https://unpkg.com/papaparse@latest/papaparse.min.js"></script>
+<script type="text/javascript" src="./assets/js/preview.js"></script>
+>>>>>>> 097323b32bcd0ca540907c8962281835056307d6:public/index.html
 
 </body>
 </html>

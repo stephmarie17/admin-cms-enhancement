@@ -1,21 +1,45 @@
-semantic.sidebar.ready = function() {
-    $('.ui.sidebar')
-    .find('.ui.button.sidebar')
-      .on('click', function() {
-        var
-          transition = $(this).data('transition')
-        ;
-        $('ui.sidebar.left')
-          .not('.styled')
-          .sidebar('setting', {
-            transition       : transition,
-            mobileTransition : transition
-          })
-        ;
-        $('ui.sidebar.left').not('.styled').sidebar('toggle');
-      });
-}
+const express       = require("express");
+const bodyParser    = require("body-parser");
+const path          = require("path");
 
-$(document)
-  .ready(semantic.sidebar.ready)
-;
+const PORT          = process.env.PORT || 8080;
+const app           = express();
+
+
+
+app.use(
+    express.urlencoded({
+      extended: true
+    })
+  );
+
+app.use(
+    bodyParser.json
+    ({extended: true}));
+
+app.use(
+    bodyParser.urlencoded ({
+        extended: true
+    })
+);
+
+app.use(express.json());
+app.use(express.static("public"));
+
+
+
+const routes = require("./controllers/preview");
+
+app.use(routes);
+
+// app.get('/api/ChatStories/episode-csv-import', function(req, res){
+//     console.log("getting in server!");
+//     console.log(req.body);
+// })
+
+
+
+
+app.listen(PORT, function() {
+    console.log("Server listening on: http://localhost:" + PORT);
+  });
