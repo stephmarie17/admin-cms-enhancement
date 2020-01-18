@@ -11,7 +11,7 @@
 </head>
 <body>
 
-<div class="ui inverted menu">
+<div class="ui sticky inverted fixed menu">
     <div class="header item">
         Yarn
     </div>
@@ -41,10 +41,40 @@
     </div>
 </div>
 
+<!-- <div class="ui sidebar left vertical visible inverted sidebar labeled menu">
+    <a class="item">
+        <i class="user outline icon"></i>
+        People
+    </a>
+    <a class="item">
+        <i class="server icon"></i>
+        Episode List
+    </a>
+    <a class="item">
+        <i class="mobile alternate icon"></i>
+        Episodes
+    </a>
+    <a class="item">
+        <i class="smile icon"></i>
+        Reviews
+    </a>
+    <a class="item">
+        <i class="microphone icon"></i>
+        Translations
+    </a>
+</div> -->
+
+
 <div class="ui grid">    
-    <div class="one wide column"></div>
+    <div class="one wide column">
+        <div>
+            <button class="ui button sidebar" style="margin-top: 75px">
+                <a class="item"><i class="house icon"></i></a>
+            </button>
+        </div>
+    </div>
     <div class="eight wide column">
-        <div class="ui card" style="width: 100%; margin-top: 35px">
+        <div class="ui card" style="width: 100%; margin-top: 75px">
             <div class="content">
                 <div class="header">+ Add an Episode</div>
             </div>
@@ -147,16 +177,26 @@
     </div>
     <div class="one wide column"></div>
     <div class="four wide column">
+<<<<<<< HEAD:index.html
+        <h2 style="margin-top: 75px">Episode Preview</h2>
+        <div class="ui card" style="width: 100%; margin-top: 25px; background-color: #333333; color: white">
+=======
         <h2 style="margin-top: 35px">Episode Preview</h2>
         <div class="ui card" style="width: 100%; margin-top: 35px; background-color: #333333; color: white" id="preview-texts">
+>>>>>>> 097323b32bcd0ca540907c8962281835056307d6:public/index.html
             <p>Upload a file and click "Preview Episode"</p>
         </div>
     </div>
     <div class="two wide column"></div>
 </div>
+<<<<<<< HEAD:index.html
+
+<script src="server.js"></script>
+=======
 <script src="https://code.jquery.com/jquery.js"></script>
 <script src="https://unpkg.com/papaparse@latest/papaparse.min.js"></script>
 <script type="text/javascript" src="./assets/js/preview.js"></script>
+>>>>>>> 097323b32bcd0ca540907c8962281835056307d6:public/index.html
 
 </body>
 </html>
