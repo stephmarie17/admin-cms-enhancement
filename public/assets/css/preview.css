@@ -12,3 +12,33 @@
     height:0px;
     background: transparent;  /* Optional: just make scrollbar invisible */
 }
+
+.initial-icon {
+    background-color: #cfcccc;
+    color: #242424;
+    border-radius: 10px;
+}
+
+
+.left-alignment{
+    margin-left: 10px;
+    padding: 12px;
+    max-width: fit-content;
+    border-radius: 40px 40px 40px 10px;
+    justify-content: flex-start;
+    
+}
+
+
+#preview-texts {
+    display: flex;
+}
+
+.right-alignment {
+    width: 50px;
+    padding: 12px;
+    max-width: fit-content;
+    border-radius: 40px 40px 10px 40px;
+    justify-content: flex-end;
+    
+}
