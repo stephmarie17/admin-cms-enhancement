@@ -5,6 +5,7 @@ let characters = [];
 let dialog = [];
 
 function init(){
+    getStoryAutoFill();
     document.getElementById('file').addEventListener('change', handleFileSelect, false);
     document.getElementById('preview').addEventListener('click', previewEpisode);
 }
@@ -38,7 +39,7 @@ async function previewEpisode() {
             type: "POST",
             data: {characters},
             success:  function(response){
-                console.log("response from ajax call");
+                console.log("response from ajax call", response);
                 displayUpload(response);
                 //Reset it here
                 characters = [];
@@ -48,8 +49,24 @@ async function previewEpisode() {
     catch (err) {
         console.log(err)
     }
-    
 };
+
+async function getStoryAutoFill() {
+    try {
+        $.ajax("/api/ChatStories/story-template-theme", {
+            type: "GET",
+            dataType: 'json',
+            data: storyInfo,
+            success: function(response) {
+                console.log(response);
+            }
+        })
+    }
+    catch (err) {
+        console.log(err)
+    }
+    console.log("This is being called");
+}
 
 function displayUpload(characterStyles) {
     const previewContainer = document.getElementById('preview-texts');
@@ -57,12 +74,13 @@ function displayUpload(characterStyles) {
     for (var i = 0; i < characterStyles.length; i ++) {
         const textChar = document.createTextNode(characterStyles[i].title + ": ");
         const pOne = document.createElement("p");
-        pOne.classList.add("initial-icon");
+        pOne.classList.add("initial-icon", `${characterStyles[i].alignment}-alignment`);
         pOne.appendChild(textChar);
         const textMessage = document.createTextNode(dialog[i]);
         const pTwo = document.createElement("p");
         pTwo.appendChild(textMessage);
-        pTwo.setAttribute("style", `background-color: #${characterStyles[i].bubbleColor}`);
+        pTwo.classList.add(`${characterStyles[i].alignment}-alignment`, `${characterStyles[i].alignment}-bubble`)
+        pTwo.setAttribute("style", `color:#${characterStyles[i].textColor};background-color: #${characterStyles[i].bubbleColor}`);
         previewContainer.appendChild(pOne).appendChild(pTwo);
     }
 };

@@ -7,7 +7,6 @@ const request = require("request");
 let data;
 
 
-
 router.post("/api/ChatStories/episode-csv-import", function(req,res) {
     const csvData = req.body;
     console.log("posting from controller");
@@ -30,26 +29,23 @@ request({
         console.log(err);
         // console.log(res);
         data = JSON.parse(body);
-        console.log(data);
+        // console.log(data);
         // console.log(data[0].chatStoryPeople);
         var results = getCharacterStyles();
         res.json(results);
-
-    });
-
+});
 
 //dummy data returned from csv file
 // let characters = ["Khloe", "Kim", "Kylie"];
 //array that will hold the styling information for each character selected in the csv
 let characterStyles = [];
+
 //used for getCharacterStyles()
 const CharacterStyle = require("../lib/characterStyle.js");
 
+
 function getCharacterStyles() {
     console.log("getCharacterStyles function is working!");
-
-
-
     
     //loops through characters in the array containing the csv characters and compares it to characters in database
     for (let i = 0; i< characters.length; i++ ) {
@@ -65,13 +61,10 @@ function getCharacterStyles() {
             // console.log(characters[i], data[0].chatStoryPeople[i].title);
         }    
 
-
-
     }
 
     // console.log(characterStyles);
     return characterStyles;
-
 }
 
 });
