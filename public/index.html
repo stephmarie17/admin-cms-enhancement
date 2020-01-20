@@ -41,7 +41,7 @@
     </div>
 </div>
 
-<!-- <div class="ui sidebar left vertical visible inverted sidebar labeled menu">
+<!-- <div class="ui sidebar left vertical inverted sidebar labeled menu">
     <a class="item">
         <i class="user outline icon"></i>
         People
@@ -64,153 +64,154 @@
     </a>
 </div> -->
 
-
-<div class="ui grid">    
-    <div class="one wide column">
-        <div>
-            <button class="ui button sidebar" style="margin-top: 75px">
-                <a class="item"><i class="house icon"></i></a>
-            </button>
-        </div>
-    </div>
-    <div class="eight wide column">
-        <div class="ui card" style="width: 100%; margin-top: 75px">
-            <div class="content">
-                <div class="header">+ Add an Episode</div>
+<div class="pusher">
+    <div class="ui grid">    
+        <div class="one wide column">
+            <div>
+                <button class="ui button sidebar" style="margin-top: 75px">
+                    <a class="item"><i class="house icon"></i></a>
+                </button>
             </div>
-            <div class="content">
-                <div class="ui small feed">
-                    <div class="event">
-                        <div class="content">
-                            <h4 class="ui sub header">Story</h4>
-                            <div class="ui input" style="width: 100%">
-                                <input type="text">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="event">
-                        <div class="content">
-                            <h4 class="ui sub header">Episode Title</h4>
-                            <div class="ui input" style="width: 100%">
-                                <input type="text">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="event">
-                        <div class="four wide column">
+        </div>
+        <div class="eight wide column">
+            <div class="ui card" style="width: 100%; margin-top: 75px">
+                <div class="content">
+                    <div class="header">+ Add an Episode</div>
+                </div>
+                <div class="content">
+                    <div class="ui small feed">
+                        <div class="event">
                             <div class="content">
-                                <h4 class="ui sub header">Episode No.</h4>
-                                <div class="ui input">
+                                <h4 class="ui sub header">Story</h4>
+                                <div class="ui input" style="width: 100%">
                                     <input type="text">
                                 </div>
                             </div>
                         </div>
-                        <div class="one wide column"></div>
-                        <div class="six wide column">
-                            <div class="ui radio checkbox" style="padding-top: 20px; padding-left: 10px">
-                                <input type="radio" name="radio">
-                                <label>Add this Episode to a Story</label>
+                        <div class="event">
+                            <div class="content">
+                                <h4 class="ui sub header">Episode Title</h4>
+                                <div class="ui input" style="width: 100%">
+                                    <input type="text">
+                                </div>
                             </div>
                         </div>
-                        <div class="five wide column"></div>
-                    </div>
-                    <div class="event">
-                        <div class="content">
-                            <h4 class="ui sub header">Episode Blurb</h4>
-                            <div class="ui input" style="width: 100%">
-                                <input type="text">
+                        <div class="event">
+                            <div class="four wide column">
+                                <div class="content">
+                                    <h4 class="ui sub header">Episode No.</h4>
+                                    <div class="ui input">
+                                        <input type="text">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="one wide column"></div>
+                            <div class="six wide column">
+                                <div class="ui radio checkbox" style="padding-top: 20px; padding-left: 10px">
+                                    <input type="radio" name="radio">
+                                    <label>Add this Episode to a Story</label>
+                                </div>
+                            </div>
+                            <div class="five wide column"></div>
+                        </div>
+                        <div class="event">
+                            <div class="content">
+                                <h4 class="ui sub header">Episode Blurb</h4>
+                                <div class="ui input" style="width: 100%">
+                                    <input type="text">
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="event">
-                        <div class="content">
-                            <h4 class="ui sub header">Playlist ID</h4>
-                            <div class="ui input" style="width: 100%">
-                                <input type="text">
+                        <div class="event">
+                            <div class="content">
+                                <h4 class="ui sub header">Playlist ID</h4>
+                                <div class="ui input" style="width: 100%">
+                                    <input type="text">
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="ui radio checkbox">
-                        <input type="checkbox" name="checkbox">
-                        <label>Add Episode for Testing - select the box if episode is being added for A/B testing</label>
-                    </div>
-                    <div class="ui radio checkbox">
-                        <input type="checkbox" name="checkbox">
-                        <label>Choose Your Own Adventure</label>
-                    </div>
-                </div>
-                <div class="content">
-                    <div class="header">
-                        <h4>+ Add Content - CSV</h4>
-                        <label for="file">Upload CSV</label>
-                        <input type="file" id="file" name="file">
-                        <!-- <button class="ui green button">Choose File</button> -->
-                        <button class="ui grey button" id="upload">Upload CSV</button>
-                    </div>
-                </div>
-                <div class="ui horizontal divider"></div>
-                <div class="content">
-                    <div class="ui accordion field">
-                        <div class="title">
-                            <i class="icon dropdown"></i>
-                            Add Person
+                        <div class="ui radio checkbox">
+                            <input type="checkbox" name="checkbox">
+                            <label>Add Episode for Testing - select the box if episode is being added for A/B testing</label>
                         </div>
-                        <div class="content field">
-                            <label class="transition hidden"></label>
-                            <div class="ui input transition hidden" style="width: 100%">
-                                <input type="text">
+                        <div class="ui radio checkbox">
+                            <input type="checkbox" name="checkbox">
+                            <label>Choose Your Own Adventure</label>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div class="header">
+                            <h4>+ Add Content - CSV</h4>
+                            <label for="file">Upload CSV</label>
+                            <input type="file" id="file" name="file">
+                            <!-- <button class="ui green button">Choose File</button> -->
+                            <button class="ui grey button" id="upload">Upload CSV</button>
+                        </div>
+                    </div>
+                    <div class="ui horizontal divider"></div>
+                    <div class="content">
+                        <div class="ui accordion field">
+                            <div class="title">
+                                <i class="icon dropdown"></i>
+                                Add Person
                             </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="ui horizontal divider"></div>
-                <div class="content">
-                    <div class="ui accordion field">
-                        <div class="title">
-                            <i class="icon dropdown"></i>
-                            Add Media
-                        </div>
-                        <div class="content field">
-                            <label class="transition hidden"></label>
-                            <div class="ui input transition hidden" style="width: 100%">
-                                <input type="text">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="ui horizontal divider"></div>
-                <div class="content">
-                    <div class="ui accordion field">
-                        <div class="title">
-                            <i class="icon dropdown"></i>
-                            Schedule
-                        </div>
-                        <div class="ui calendar" id="calendar">
-                            <div class="ui input left icon">
-                                <i class="calendar icon"></i>
-                                <input type="text" placeholder="Date/Time">
+                            <div class="content field">
+                                <label class="transition hidden"></label>
+                                <div class="ui input transition hidden" style="width: 100%">
+                                    <input type="text">
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="ui horizontal divider"></div>
-                <div class="content">
-                    <div class="header">
-                        <button class="ui green button" id="preview">Preview</button>
-                        <button class="ui red button">Submit</button>
+                    <div class="ui horizontal divider"></div>
+                    <div class="content">
+                        <div class="ui accordion field">
+                            <div class="title">
+                                <i class="icon dropdown"></i>
+                                Add Media
+                            </div>
+                            <div class="content field">
+                                <label class="transition hidden"></label>
+                                <div class="ui input transition hidden" style="width: 100%">
+                                    <input type="text">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ui horizontal divider"></div>
+                    <div class="content">
+                        <div class="ui accordion field">
+                            <div class="title">
+                                <i class="icon dropdown"></i>
+                                Schedule
+                            </div>
+                            <div class="ui calendar" id="calendar">
+                                <div class="ui input left icon">
+                                    <i class="calendar icon"></i>
+                                    <input type="text" placeholder="Date/Time">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ui horizontal divider"></div>
+                    <div class="content">
+                        <div class="header">
+                            <button class="ui green button" id="preview">Preview</button>
+                            <button class="ui red button">Submit</button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="one wide column"></div>
-    <div class="four wide column">
-        <h2 style="margin-top: 35px">Episode Preview</h2>
-        <div class="ui card" style="width: 100%; margin-top: 35px; background-color: #333333; color: white" id="preview-texts">
-            <p>Upload a file and click "Preview Episode"</p>
+        <div class="one wide column"></div>
+        <div class="four wide column">
+            <h2 style="margin-top: 35px">Episode Preview</h2>
+            <div class="ui card" style="width: 100%; margin-top: 35px; background-color: #333333; color: white" id="preview-texts">
+                <p>Upload a file and click "Preview Episode"</p>
+            </div>
         </div>
+        <div class="two wide column"></div>
     </div>
-    <div class="two wide column"></div>
 </div>
 <script src="https://code.jquery.com/jquery.js"></script>
 <script src="https://unpkg.com/papaparse@latest/papaparse.min.js"></script>
@@ -221,6 +222,9 @@
 $('#calendar').calendar();
 $('.ui.accordion')
   .accordion()
+;
+$('.ui.sidebar.left')
+  .sidebar('toggle')
 ;
 </script>
 
