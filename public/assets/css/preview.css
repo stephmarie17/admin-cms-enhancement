@@ -24,7 +24,13 @@
 }
 
 
-
+.undefined-iconalignment {
+    background: transparent;
+    font-size: 14px;
+    text-align: center;
+    font-style: italic;
+    font-weight: bold;
+}
 
 /* .left-alignment{
     

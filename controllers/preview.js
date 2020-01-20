@@ -42,6 +42,8 @@ let characterStyles = [];
 
 //used for getCharacterStyles()
 const CharacterStyle = require("../lib/characterStyle.js");
+const SystemStyle = require("../lib/systemStyle.js");
+
 
 
 function getCharacterStyles() {
@@ -59,6 +61,9 @@ function getCharacterStyles() {
         } else {
             console.log ("don't match");
             // console.log(characters[i], data[0].chatStoryPeople[i].title);
+            const fgColor = data[0].fgColor;
+            characterStyles.push(new SystemStyle ("", fgColor));
+
         }    
 
     }
