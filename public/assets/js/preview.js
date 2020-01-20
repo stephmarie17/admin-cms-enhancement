@@ -3,6 +3,7 @@ console.log("CONNECTED");
 let messages = [];
 let characters = [];
 let dialog = [];
+let storyTheme = [];
 
 function init(){
     getStoryAutoFill();
@@ -52,7 +53,6 @@ async function previewEpisode() {
 };
 
 function getStoryAutoFill(err) {
-<<<<<<< HEAD
     $.ajax("/api/ChatStories/story-template-theme", {
         type: "GET",
         dataType: 'json',
@@ -60,6 +60,8 @@ function getStoryAutoFill(err) {
         success: function(response) {
             console.log("response from story ajax call", response);
             formAutoFill(response);
+            storyTheme.push(response);
+            console.log("Story Theme", storyTheme);
         }
     })
     if (err) console.log(err);
@@ -68,25 +70,12 @@ function getStoryAutoFill(err) {
 function formAutoFill(chatStory) {
     const formStoryField = document.getElementById('chatstory-field');
     formStoryField.setAttribute("value", `${chatStory.title}`);
-=======
-        $.ajax("/api/ChatStories/story-template-theme", {
-            type: "GET",
-            dataType: 'json',
-            success: function(response) {
-                console.log(response);
-                console.log(storyInfo);
-            }
-        })
-    
-        console.log(err)
-    
-    console.log("This is being called");
->>>>>>> master
 }
 
 function displayUpload(characterStyles) {
     const previewContainer = document.getElementById('preview-texts');
     previewContainer.innerHTML = '';
+    previewContainer.setAttribute("style", `color:${storyTheme[0].fgColor};background-color: ${storyTheme[0].bgColor}`)
     for (var i = 0; i < characterStyles.length; i ++) {
         const iconChar = document.createTextNode(characterStyles[i].title.charAt(0));
         const pOne = document.createElement("p");
@@ -96,11 +85,6 @@ function displayUpload(characterStyles) {
         const pTwo = document.createElement("p");
         pTwo.appendChild(textMessage);
         pTwo.classList.add(`${characterStyles[i].alignment}-alignment`, `${characterStyles[i].alignment}-bubble`)
-<<<<<<< HEAD
-        pTwo.setAttribute("style", `color:#${characterStyles[i].textColor};background-color: #${characterStyles[i].bubbleColor}`);
-        previewContainer.appendChild(pOne);
-        previewContainer.appendChild(pTwo);
-=======
         pTwo.setAttribute("style", `color:#${characterStyles[i].textColor};background-color: #${characterStyles[i].bubbleColor}; color: #${characterStyles[i].fgColor}`);
 
         const textChar = document.createTextNode(characterStyles[i].title);
@@ -111,7 +95,6 @@ function displayUpload(characterStyles) {
         
         previewContainer.appendChild(pThree);
         previewContainer.appendChild(pTwo).appendChild(pOne);
->>>>>>> master
     }
 };
 
