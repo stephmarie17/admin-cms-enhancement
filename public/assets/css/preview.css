@@ -26,6 +26,10 @@
 
 .undefined-iconalignment {
     background: transparent;
+
+}
+
+p.undefined-alignment.undefined-bubble {
     font-size: 14px;
     text-align: center;
     font-style: italic;
