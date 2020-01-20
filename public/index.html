@@ -150,27 +150,43 @@
                 </div>
                 <div class="ui horizontal divider"></div>
                 <div class="content">
-                    <div class="header">
-                        <h4>+ Add Person</h4>
+                    <div class="ui accordion field">
+                        <div class="title">
+                            <i class="icon dropdown"></i>
+                            Add Person
+                        </div>
+                        <div class="content field">
+                            <label class="transition hidden"></label>
+                            <input type="text" class="transition hidden">
+                        </div>
                     </div>
                 </div>
                 <div class="ui horizontal divider"></div>
                 <div class="content">
-                    <div class="header">
-                        <h4>+ Add Media</h4>
+                    <div class="ui accordion field">
+                        <div class="title">
+                            <i class="icon dropdown"></i>
+                            Add Media
+                        </div>
+                        <div class="content field">
+                            <label class="transition hidden"></label>
+                            <input type="text" class="transition hidden">
+                        </div>
                     </div>
                 </div>
                 <div class="ui horizontal divider"></div>
                 <div class="content">
-                    <div class="header">
-                        <h4>+ Schedule</h4>
+                    <div class="ui accordion field">
+                        <div class="title">
+                            <i class="icon dropdown"></i>
+                            Schedule
+                        </div>
                         <div class="ui calendar" id="calendar">
                             <div class="ui input left icon">
-                              <i class="calendar icon"></i>
-                              <input type="text" placeholder="Date/Time">
+                                <i class="calendar icon"></i>
+                                <input type="text" placeholder="Date/Time">
                             </div>
-                          </div>
-                        <br/>
+                        </div>
                     </div>
                 </div>
                 <div class="ui horizontal divider"></div>
@@ -199,7 +215,9 @@
 
 <script>
 $('#calendar').calendar();
-
+$('.ui.accordion')
+  .accordion()
+;
 </script>
 
 </body>
