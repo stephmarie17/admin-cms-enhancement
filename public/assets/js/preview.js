@@ -78,7 +78,7 @@ function displayUpload(characterStyles) {
         const pTwo = document.createElement("p");
         pTwo.appendChild(textMessage);
         pTwo.classList.add(`${characterStyles[i].alignment}-alignment`, `${characterStyles[i].alignment}-bubble`)
-        pTwo.setAttribute("style", `color:#${characterStyles[i].textColor};background-color: #${characterStyles[i].bubbleColor}`);
+        pTwo.setAttribute("style", `color:#${characterStyles[i].textColor};background-color: #${characterStyles[i].bubbleColor}; color: #${characterStyles[i].fgColor}`);
 
         const textChar = document.createTextNode(characterStyles[i].title);
         pThree = document.createElement("p");
