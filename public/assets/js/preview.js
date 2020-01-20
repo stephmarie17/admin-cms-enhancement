@@ -52,6 +52,23 @@ async function previewEpisode() {
 };
 
 function getStoryAutoFill(err) {
+<<<<<<< HEAD
+    $.ajax("/api/ChatStories/story-template-theme", {
+        type: "GET",
+        dataType: 'json',
+        // data: storyInfo,
+        success: function(response) {
+            console.log("response from story ajax call", response);
+            formAutoFill(response);
+        }
+    })
+    if (err) console.log(err);
+}
+
+function formAutoFill(chatStory) {
+    const formStoryField = document.getElementById('chatstory-field');
+    formStoryField.setAttribute("value", `${chatStory.title}`);
+=======
         $.ajax("/api/ChatStories/story-template-theme", {
             type: "GET",
             dataType: 'json',
@@ -64,6 +81,7 @@ function getStoryAutoFill(err) {
         console.log(err)
     
     console.log("This is being called");
+>>>>>>> master
 }
 
 function displayUpload(characterStyles) {
@@ -78,6 +96,11 @@ function displayUpload(characterStyles) {
         const pTwo = document.createElement("p");
         pTwo.appendChild(textMessage);
         pTwo.classList.add(`${characterStyles[i].alignment}-alignment`, `${characterStyles[i].alignment}-bubble`)
+<<<<<<< HEAD
+        pTwo.setAttribute("style", `color:#${characterStyles[i].textColor};background-color: #${characterStyles[i].bubbleColor}`);
+        previewContainer.appendChild(pOne);
+        previewContainer.appendChild(pTwo);
+=======
         pTwo.setAttribute("style", `color:#${characterStyles[i].textColor};background-color: #${characterStyles[i].bubbleColor}; color: #${characterStyles[i].fgColor}`);
 
         const textChar = document.createTextNode(characterStyles[i].title);
@@ -88,6 +111,7 @@ function displayUpload(characterStyles) {
         
         previewContainer.appendChild(pThree);
         previewContainer.appendChild(pTwo).appendChild(pOne);
+>>>>>>> master
     }
 };
 
