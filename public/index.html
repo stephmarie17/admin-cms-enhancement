@@ -68,11 +68,8 @@
     <div class="ui grid">    
         <div class="one wide column">
             <div>
-                <button class="ui vertical animated button toggle button" style="margin-top: 75px">
-                    <div class="hidden content">Menu</div>
-                    <div class="visible content">
-                        <i class="list icon"></i>
-                    </div>
+                <button class="ui button sidebar" style="margin-top: 75px">
+                    <a class="item"><i class="house icon"></i></a>
                 </button>
             </div>
         </div>
@@ -240,11 +237,8 @@ $('#calendar').calendar();
 $('.ui.accordion')
   .accordion()
 ;
-$('.ui.sidebar.left').first()
-  .sidebar('attach events', '.toggle.button')
-;
-$('.toggle.button')
-  .removeClass('disabled')
+$('.ui.sidebar.left')
+  .sidebar('toggle')
 ;
 
 $("#submit").click(function() { 
