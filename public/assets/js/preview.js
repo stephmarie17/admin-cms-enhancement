@@ -51,21 +51,22 @@ async function previewEpisode() {
     }
 };
 
-async function getStoryAutoFill() {
-    try {
-        $.ajax("/api/ChatStories/story-template-theme", {
-            type: "GET",
-            dataType: 'json',
-            data: storyInfo,
-            success: function(response) {
-                console.log(response);
-            }
-        })
-    }
-    catch (err) {
-        console.log(err)
-    }
-    console.log("This is being called");
+function getStoryAutoFill(err) {
+    $.ajax("/api/ChatStories/story-template-theme", {
+        type: "GET",
+        dataType: 'json',
+        // data: storyInfo,
+        success: function(response) {
+            console.log("response from story ajax call", response);
+            formAutoFill(response);
+        }
+    })
+    if (err) console.log(err);
+}
+
+function formAutoFill(chatStory) {
+    const formStoryField = document.getElementById('chatstory-field');
+    formStoryField.setAttribute("value", `${chatStory.title}`);
 }
 
 function displayUpload(characterStyles) {
@@ -81,7 +82,8 @@ function displayUpload(characterStyles) {
         pTwo.appendChild(textMessage);
         pTwo.classList.add(`${characterStyles[i].alignment}-alignment`, `${characterStyles[i].alignment}-bubble`)
         pTwo.setAttribute("style", `color:#${characterStyles[i].textColor};background-color: #${characterStyles[i].bubbleColor}`);
-        previewContainer.appendChild(pOne).appendChild(pTwo);
+        previewContainer.appendChild(pOne);
+        previewContainer.appendChild(pTwo);
     }
 };
 
