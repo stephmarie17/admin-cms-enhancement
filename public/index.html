@@ -103,22 +103,18 @@
                             </div>
                         </div>
                         <div class="event">
-                            <div class="four wide column">
-                                <div class="content">
-                                    <h4 class="ui sub header">Episode No.</h4>
-                                    <div class="ui input">
-                                        <input type="text">
-                                    </div>
+                            <div class="content">
+                                <h4 class="ui sub header">Episode No.</h4>
+                                <div class="ui input">
+                                    <input type="text">
                                 </div>
                             </div>
-                            <div class="one wide column"></div>
-                            <div class="six wide column">
-                                <div class="ui radio checkbox" style="padding-top: 20px; padding-left: 10px">
-                                    <input type="checkbox" name="checkbox">
-                                    <label>Add this Episode to a Story</label>
-                                </div>
+                        </div>
+                        <div class="content">
+                            <div class="ui radio checkbox">
+                                <input type="checkbox" name="checkbox">
+                                <label>Add this Episode to a Story</label>
                             </div>
-                            <div class="five wide column"></div>
                         </div>
                         <div class="event">
                             <div class="content">
@@ -138,27 +134,33 @@
                         </div>
                         <div class="ui radio checkbox">
                             <input type="checkbox" name="checkbox">
-                            <label>Add Episode for Testing - select the box if episode is being added for A/B testing</label>
+                            <label>Add Episode for Testing</label>
                         </div>
+                        <div class="ui horizontal divider"></div>
                         <div class="ui radio checkbox">
                             <input type="checkbox" name="checkbox">
                             <label>Choose Your Own Adventure</label>
                         </div>
                     </div>
                     <div class="content">
-                        <div class="header">
-                            <h4>+ Add Content - CSV</h4>
-                            <label for="file">Upload CSV</label>
-                            <input type="file" id="file" name="file">
-                            <!-- <button class="ui green button">Choose File</button> -->
-                            <button class="ui grey button" id="upload">Upload CSV</button>
+                        <div class="ui accordion field">
+                            <div class="title">
+                                <i class="icon plus"></i>
+                                Add Content - CSV
+                            </div>
+                            <div class="content field">
+                                <label class="transition hidden"></label>
+                                <label for="file">Upload CSV</label>
+                                <input type="file" id="file" name="file">
+                                <button class="ui grey button" id="upload">Upload CSV</button>
+                            </div>
                         </div>
                     </div>
                     <div class="ui horizontal divider"></div>
                     <div class="content">
                         <div class="ui accordion field">
                             <div class="title">
-                                <i class="icon dropdown"></i>
+                                <i class="icon plus"></i>
                                 Add Person
                             </div>
                             <div class="content field">
@@ -173,7 +175,7 @@
                     <div class="content">
                         <div class="ui accordion field">
                             <div class="title">
-                                <i class="icon dropdown"></i>
+                                <i class="icon plus"></i>
                                 Add Media
                             </div>
                             <div class="content field">
@@ -188,10 +190,11 @@
                     <div class="content">
                         <div class="ui accordion field">
                             <div class="title">
-                                <i class="icon dropdown"></i>
+                                <i class="icon plus"></i>
                                 Schedule
                             </div>
                             <div class="ui calendar" id="calendar">
+                                <label class="transition hidden"></label>
                                 <div class="ui input left icon">
                                     <i class="calendar icon"></i>
                                     <input type="text" placeholder="Date/Time" id="date">
@@ -212,20 +215,27 @@
         <div class="one wide column"></div>
         <div class="four wide column">
             <h2 style="margin-top: 75px">Episode Preview</h2>
-            <div class="ui grid"> 
-                <div class="eight wide column">
-                    <div class="ui toggle checkbox">
-                        <input type="checkbox" name="public">
-                        <label>iOS</label>
-                    </div>
-                </div>
-                <div class="eight wide column">
-                    <div class="ui toggle checkbox">
-                        <input type="checkbox" name="public">
-                        <label>Android</label>
-                    </div>
-                </div>
-            </div>
+            <select class="ui search dropdown">
+                <option value="">Phone Type</option>
+                <option value="iPhone 11">iPhone 11 Pro</option>
+                <option value="iPhone 11 Pro Max">iPhone 11 Pro Max</option>
+                <option value="iPhone 11">iPhone 11</option>
+                <option value="iPhone XS">iPhone XS</option>
+                <option value="iPhone XS Max">iPhone XS Max</option>
+                <option value="iPhone XR">iPhone XR</option>
+                <option value="iPhone X">iPhone X</option>
+                <option value="iPhone 8">iPhone 8</option>
+                <option value="Google Pixel 4">Google Pixel 4</option>
+                <option value="Google Pixel 4">Google Pixel 3</option>
+                <option value="Google Pixel 4">Google Pixel 2</option>
+                <option value="Google Pixel 4">Google Pixel 1</option>
+                <option value="Samsung Galaxy S10+">Samsung Galaxy S10+</option>
+                <option value="Samsung Galaxy S10">Samsung Galaxy S10</option>
+                <option value="Samsung Galaxy S9+">Samsung Galaxy S9+</option>
+                <option value="Samsung Galaxy S9">Samsung Galaxy S9</option>
+                <option value="Samsung Galaxy S8+">Samsung Galaxy S8+</option>
+                <option value="Samsung Galaxy S8">Samsung Galaxy S8</option>
+            </select>
             <div class="ui card" style="width: 100%; margin-top: 35px; background-color: #333333; color: white" id="preview-texts">
                 <p>Upload a file and click "Preview Episode"</p>
             </div>
