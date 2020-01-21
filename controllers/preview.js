@@ -74,5 +74,10 @@ function getCharacterStyles() {
 
 });
 
+router.post("/upload/image", function (req, res) {
+    const img = req.body;
+    console.log("Image uploaded: ", img);
+    res.json(img);
+})
 
 module.exports = router;

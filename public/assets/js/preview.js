@@ -5,10 +5,12 @@ let characters = [];
 let dialog = [];
 let storyTheme = [];
 
+// Event listeners and autopolupate the chat story field on load
 function init(){
     getStoryAutoFill();
     document.getElementById('file').addEventListener('change', handleFileSelect, false);
     document.getElementById('preview').addEventListener('click', previewEpisode);
+    document.getElementById('img-upload').addEventListener('click', uploadImageFiles);
 }
 
 // Upload CSV and get data
@@ -52,6 +54,7 @@ async function previewEpisode() {
     }
 };
 
+// Gets chat story title and darkmode/lightmode themes
 function getStoryAutoFill(err) {
     $.ajax("/api/ChatStories/story-template-theme", {
         type: "GET",
@@ -67,11 +70,13 @@ function getStoryAutoFill(err) {
     if (err) console.log(err);
 }
 
+// Autofills the title of the form - in future implement autofilling episode number
 function formAutoFill(chatStory) {
     const formStoryField = document.getElementById('chatstory-field');
     formStoryField.setAttribute("value", `${chatStory.title}`);
 }
 
+// Triggered by preview button event - displays the preview of the CSV text messages
 function displayUpload(characterStyles) {
     const previewContainer = document.getElementById('preview-texts');
     previewContainer.innerHTML = '';
@@ -96,6 +101,32 @@ function displayUpload(characterStyles) {
         previewContainer.appendChild(pThree);
         previewContainer.appendChild(pTwo).appendChild(pOne);
     }
+};
+
+// Image upload process
+var upload = new FileUploadWithPreview('yarnImageUpload')
+
+function uploadImageFiles() {
+    const formData = new FormData();
+    const files = upload.cachedFileArray;
+    files.forEach(image => {
+        formData.append('image', image);
+        console.log(formData);
+    });
+
+    $.ajax("/upload/image", {
+        type: "POST",
+        data: formData,
+        contentType:false,
+        processData: false,
+        success: function(response) {
+            if(response !=0) {
+                console.log("Images uploaded successfully!");
+            } else {
+                console.log("Image upload error");
+            }
+        }
+    })
 };
 
 init();
