@@ -44,6 +44,7 @@ async function previewEpisode() {
                 displayUpload(response);
                 //Reset it here
                 characters = [];
+                console.log (response);
              }
         })
     }
@@ -71,6 +72,8 @@ function formAutoFill(chatStory) {
     const formStoryField = document.getElementById('chatstory-field');
     formStoryField.setAttribute("value", `${chatStory.title}`);
 }
+
+
 
 function displayUpload(characterStyles) {
     const previewContainer = document.getElementById('preview-texts');

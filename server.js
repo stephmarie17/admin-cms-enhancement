@@ -30,6 +30,7 @@ app.use(express.static("public"));
 // })
 const previewRoute = require("./controllers/preview");
 const storyRoute = require("./controllers/storytemplate");
+
 app.use(previewRoute);
 app.use(storyRoute);
 
