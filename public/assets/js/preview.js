@@ -109,10 +109,21 @@ var upload = new FileUploadWithPreview('yarnImageUpload')
 function uploadImageFiles() {
     const formData = new FormData();
     const files = upload.cachedFileArray;
+    // console.log(files);
     files.forEach(image => {
         formData.append('image', image);
-        console.log(formData);
+        // console.log(formData);
+        // console.log(image);
     });
+new Response(formData).text().then(console.log);
+
+for (var value of formData.values()) {
+    console.log("Value in formdata!");
+    console.log(value); 
+    console.log(value.name);
+ }
+  
+
 
     $.ajax("/upload/image", {
         type: "POST",
