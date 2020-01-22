@@ -1,0 +1,9 @@
+
+.modal {
+margin-top: auto !important;
+    position: relative;
+    top: 20%;
+    /* margin-right: auto !important; */
+    margin-bottom: 0px !important;
+    margin-left: 20% !important;
+};

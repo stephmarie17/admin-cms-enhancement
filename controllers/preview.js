@@ -35,6 +35,7 @@ request({
         res.json(results);
 });
 
+
 //dummy data returned from csv file
 // let characters = ["Khloe", "Kim", "Kylie"];
 //array that will hold the styling information for each character selected in the csv
