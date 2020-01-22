@@ -8,8 +8,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.css">
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
     <link rel="stylesheet" type="text/css" href="./assets/css/preview.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/main.css">
+
 </head>
 <body>
+
 
 <div class="ui sticky inverted fixed menu">
     <div class="header item">
@@ -67,6 +70,8 @@
         Debug
     </a>
 </div>
+
+
 
 <div class="pusher">
     <div class="ui grid">    
@@ -242,6 +247,15 @@
         </div>
         <div class="two wide column"></div>
     </div>
+</div>
+<div>
+    <!-- Pop-up for missing characters -->
+<div class="ui modal">
+    <div class="header">Missing characters</div>
+    <div class="content">
+        <div id="missing-char"></div>
+    </div>
+</div>
 </div>
 <script src="https://code.jquery.com/jquery.js"></script>
 <script src="https://unpkg.com/papaparse@latest/papaparse.min.js"></script>

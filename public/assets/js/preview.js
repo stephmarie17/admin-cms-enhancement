@@ -41,10 +41,15 @@ async function previewEpisode() {
             data: {characters},
             success:  function(response){
                 console.log("response from ajax call", response);
-                displayUpload(response);
+                console.log (typeof response[0]);
+
+                if (response[0] instanceof Object) {
+                    displayUpload(response);
+                } else {
+                    testModal(response);
+                }
                 //Reset it here
                 characters = [];
-                console.log (response);
              }
         })
     }
@@ -52,6 +57,20 @@ async function previewEpisode() {
         console.log(err)
     }
 };
+
+
+function testModal (missingChar) {
+
+    for (let i = 0; i < missingChar.length; i++) {
+        const missingCharDiv = document.getElementById('missing-char');
+        const text = document.createTextNode(`${missingChar[i]}`);
+        pChar = document.createElement("p");
+        pChar.appendChild(text);
+        missingCharDiv.appendChild(pChar);
+    }
+   
+    $('.ui.modal').modal('show');
+}
 
 function getStoryAutoFill(err) {
     $.ajax("/api/ChatStories/story-template-theme", {
