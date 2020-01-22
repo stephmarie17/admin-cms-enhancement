@@ -60,10 +60,10 @@ async function previewEpisode() {
 
 
 function testModal (missingChar) {
-
-    for (let i = 0; i < missingChar.length; i++) {
+    const filteredMissingChar = Array.from(new Set(missingChar));
+    for (let i = 0; i < filteredMissingChar.length; i++) {
         const missingCharDiv = document.getElementById('missing-char');
-        const text = document.createTextNode(`${missingChar[i]}`);
+        const text = document.createTextNode(`${missingChar[i]} needs to be added to the ChatStory.`);
         pChar = document.createElement("p");
         pChar.appendChild(text);
         missingCharDiv.appendChild(pChar);
