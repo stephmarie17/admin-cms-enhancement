@@ -10,17 +10,15 @@
 
 }
 
-
-
 #preview-texts {
     max-height: 78.5vh;
     overflow-x: scroll;
 }
 
 #preview-texts::-webkit-scrollbar {
-    width: 0px;  /* Remove scrollbar space */
+    width: 0px; 
     height:0px;
-    background: transparent;  /* Optional: just make scrollbar invisible */
+    background: transparent; 
 }
 
 
@@ -106,3 +104,28 @@ p.undefined-alignment.undefined-bubble {
     padding-bottom: 10px;
     margin-left: auto;
 }
+
+/* Screen Display dimensions */
+.iphone-X {
+    min-width: 375px;
+    min-height: 812px;
+    border-radius: 5px;
+}
+
+.iphone-8 {
+    min-width: 375px;
+    min-height: 667px;
+}
+
+.android {
+    min-width: 360px;
+    min-height: 640px;
+    border-radius: 5px;
+}
+
+.pixel {
+    min-width: 411px;
+    min-height: 731px;
+    border-radius: 5px;
+}
+
