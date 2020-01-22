@@ -40,6 +40,8 @@ request({
 //array that will hold the styling information for each character selected in the csv
 let characterStyles = [];
 
+let missingChar = [];
+
 //used for getCharacterStyles()
 const CharacterStyle = require("../lib/characterStyle.js");
 const SystemStyle = require("../lib/systemStyle.js");
@@ -53,26 +55,39 @@ function getCharacterStyles() {
     for (let i = 0; i< characters.length; i++ ) {
        const compC = data[0].chatStoryPeople.find(function(x){return x.title === characters[i]});
 
-        if (compC) {
+       if (compC === undefined && characters[i] !== "System" && characters[i] !== "") {
+            missingChar.push(characters[i]);
+            console.log("missing characters in controller!");
+            console.log (missingChar);
+       } else if (compC) {
             const {title, nameColor, bubbleColor, textColor, alignment} = compC;
 
             //only pushes up the new character to the characterStyles array when the csv character matches the database character
             characterStyles.push( new CharacterStyle (title, nameColor, bubbleColor, textColor, alignment));
-        } else {
+        } else if (characters[i] === "System") {
             console.log ("don't match");
             // console.log(characters[i], data[0].chatStoryPeople[i].title);
             const fgColor = data[0].fgColor;
             characterStyles.push(new SystemStyle ("", fgColor));
 
-        }    
+        } else {
+            console.log ("Neither a character or the system!");
+        }
+        
 
     }
 
     // console.log(characterStyles);
-    return characterStyles;
+    // return missingChar;
+    if (missingChar.length > 0 ) {
+        return missingChar;
+    } else {
+        return characterStyles;
+    }
 }
 
 });
+
 
 
 module.exports = router;
