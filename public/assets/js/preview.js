@@ -120,4 +120,28 @@ function displayUpload(characterStyles) {
     }
 };
 
+const deviceDisplay = document.getElementById('preview-device');
+
+deviceDisplay.onchange = function() {
+    const selection = document.getElementById('preview-device').value;
+    console.log(selection);
+    const previewContainer = document.getElementById('preview-texts');
+    switch (selection) {
+        case 'iPhone X':
+            previewContainer.setAttribute("class", 'ui card iphone-X');
+            break;
+        case 'iPhone 8':
+            previewContainer.setAttribute("class",'ui card iphone-8');
+            break;
+        case 'Samsung Galaxy S8':
+            previewContainer.setAttribute("class", 'ui card android');
+            break;
+        case 'Google Pixel 2':
+            previewContainer.setAttribute("class", 'ui card pixel');
+            break;
+        default:
+            console.log("Default div size");
+    }
+}
+
 init();
