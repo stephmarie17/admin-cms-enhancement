@@ -43,11 +43,17 @@ app.use(express.static("public"));
 // controllers.forEach(controller => {
 //   app.use(`/${controller}`, require(`./controllers/${controller}`))
 // })
+
 const previewRoute = require("./controllers/preview");
 const storyRoute = require("./controllers/storytemplate");
 
 app.use(previewRoute);
 app.use(storyRoute);
+
+app.get("/", function(req, res) {
+  res.json(path.join(__dirname, "public/index.html"));
+});
+
 
 
 app.listen(PORT, function() {
