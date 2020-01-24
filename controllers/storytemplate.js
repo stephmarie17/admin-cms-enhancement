@@ -23,8 +23,6 @@ request({
         console.log(err);
         // console.log(res);
         data = JSON.parse(body);
-        console.log("Story", data);
-        // console.log(data[0].chatStoryPeople);
         var results = getStoryInfo();
         res.json(results);
 });
