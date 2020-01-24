@@ -3,27 +3,46 @@ const router = express.Router();
 const bodyParser = require("body-parser");
 const app = express();
 const request = require("request");
-// from API get request 
 let data;
+
+
 
 // Get data from CSV import to compare to API results
 router.post("/api/ChatStories/episode-csv-import", function(req,res) {
-    const csvData = req.body;
+    // from API get request 
+  
+    const storyData = req.body;
     // console.log(req.body);
-    let characters = csvData.characters;
+    let characters = storyData.characters;
+    let id = storyData.id;
+    console.log("id in controller", id);
+    console.log("characters in controller", characters);
 
+        let templateURLOne = `https://live-api-stage.yarnapp.co/api/ChatStories?filter=`;
+        let templateURLTwo = `{"where":{"id":${id}},"include":"chatStoryPeople"}`
+        let encodedURL = encodeURIComponent(templateURLTwo);
+        let finalURL = templateURLOne + encodedURL; 
+
+
+   
+
+
+<<<<<<< HEAD
 // Template url to get story info and chatstory people
 // const chatStoryId = id
 // const templateURL = `https://live-api-stage.yarnapp.co/api/ChatStories?filter={"where":{"id":${chatStoryId}},"include":"chatStoryPeople"}`
 // const enocdedURL = encodeURIComponent(templateURL);
+=======
+    
+>>>>>>> master
 
 //Connection to API
-const URL =
-'https://live-api-stage.yarnapp.co/api/ChatStories?filter=%7B%22where%22:%7B%22id%22:2%7D,%22include%22:%22chatStoryPeople%22%7D';
+// const URL =
+// 'https://live-api-stage.yarnapp.co/api/ChatStories?filter=%7B%22where%22:%7B%22id%22:2%7D,%22include%22:%22chatStoryPeople%22%7D';
 
 request({
     method: 'GET',
-    uri: URL,
+    uri: finalURL,
     headers: {
         Authorization: 'ocKE1WN6EE3aSi3olODQxhP1qPUByw3oksOSOvKrjF0I0EofhYCkKAgWe6b1ivaH'
     }

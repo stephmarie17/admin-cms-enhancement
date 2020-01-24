@@ -43,9 +43,11 @@ app.use(express.static("public"));
 
 const previewRoute = require("./controllers/preview");
 const storyRoute = require("./controllers/storytemplate");
+const AllStories = require("./controllers/chatStories");
 
 app.use(previewRoute);
 app.use(storyRoute);
+app.use(AllStories);
 
 app.get("/", function(req, res) {
   res.json(path.join(__dirname, "public/index.html"));
