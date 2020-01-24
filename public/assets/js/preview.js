@@ -2,9 +2,12 @@ let messages = [];
 let characters = [];
 let dialog = [];
 let storyTheme = [];
+let allStories = [];
+let id;
 
 function init(){
-    getStoryAutoFill();
+    getStories();
+    getTheme();
     document.getElementById('file').addEventListener('change', handleFileSelect, false);
     document.getElementById('preview').addEventListener('click', previewEpisode);
 }
@@ -22,6 +25,15 @@ function handleFileLoad(event) {
     messages.push(data);
 }
 
+const selectedItem = document.getElementById("search-select");
+
+selectedItem.onchange = function (){
+    id = document.getElementById('search-select').value;
+}
+
+
+
+
 // Gets relevant data from CSV in order to apply styling for preview
 async function previewEpisode() {
     try {
@@ -34,7 +46,7 @@ async function previewEpisode() {
         }
         $.ajax("/api/ChatStories/episode-csv-import", {
             type: "POST",
-            data: {characters},
+            data: {characters, id},
             success:  function(response){
                 if (response[0] instanceof Object) {
                     displayUpload(response);
@@ -51,6 +63,31 @@ async function previewEpisode() {
     }
 };
 
+function getStories(err){
+    $.ajax("/api/ChatStories/all", {
+        type: "GET",
+        dataType: 'json',
+        // data: storyInfo,
+        success: function(response) {
+            allStoriesDropdown(response);
+            allStories.push(response);
+        }
+    })
+    if (err) console.log(err);
+
+}
+
+function allStoriesDropdown(allStories) {
+    const dropdownField = document.getElementById('search-select');
+
+    for (let i = 0; i<allStories.length; i++){
+        const storyTitle = document.createTextNode(allStories[i].title);
+        const option = document.createElement("option");
+        option.append(storyTitle);
+        option.setAttribute("value", `${allStories[i].id}` );
+        dropdownField.appendChild(option);
+    } 
+}
 
 function testModal (missingChar) {
     const filteredMissingChar = Array.from(new Set(missingChar));
@@ -65,23 +102,19 @@ function testModal (missingChar) {
     $('.ui.modal').modal('show');
 }
 
-function getStoryAutoFill(err) {
+function getTheme(err) {
     $.ajax("/api/ChatStories/story-template-theme", {
         type: "GET",
         dataType: 'json',
         // data: storyInfo,
         success: function(response) {
-            formAutoFill(response);
             storyTheme.push(response);
         }
     })
     if (err) console.log(err);
 }
 
-function formAutoFill(chatStory) {
-    const formStoryField = document.getElementById('chatstory-field');
-    formStoryField.setAttribute("value", `${chatStory.title}`);
-}
+
 
 
 
