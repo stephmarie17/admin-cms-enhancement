@@ -33,13 +33,12 @@ const AllStories = require("../lib/chatStories.js");
 // Constructs object to export the story title and display theme
 function getAllStories() {
 
-    for (let i = 0; i<10; i++){
+    for (let i = 0; i<data.length; i++){
 
         const storiesData = data[i];
         const {title, id} = storiesData;
         allStories.push (new AllStories (title, id));
-        console.log("We are in all stories controller!");
-        console.log(allStories);
+        
 
     }
   
