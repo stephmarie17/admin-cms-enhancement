@@ -27,7 +27,14 @@ router.post("/api/ChatStories/episode-csv-import", function(req,res) {
    
 
 
+<<<<<<< HEAD
+// Template url to get story info and chatstory people
+// const chatStoryId = id
+// const templateURL = `https://live-api-stage.yarnapp.co/api/ChatStories?filter={"where":{"id":${chatStoryId}},"include":"chatStoryPeople"}`
+// const enocdedURL = encodeURIComponent(templateURL);
+=======
     
+>>>>>>> master
 
 //Connection to API
 // const URL =

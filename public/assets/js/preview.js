@@ -116,8 +116,6 @@ function getTheme(err) {
 
 
 
-
-
 function displayUpload(characterStyles) {
     const previewContainer = document.getElementById('preview-texts');
     previewContainer.innerHTML = '';
@@ -133,6 +131,7 @@ function displayUpload(characterStyles) {
         pTwo.classList.add(`${characterStyles[i].alignment}-alignment`, `${characterStyles[i].alignment}-bubble`)
         pTwo.setAttribute("style", `color:#${characterStyles[i].textColor};background-color: #${characterStyles[i].bubbleColor}; color: #${characterStyles[i].fgColor}`);
 
+        
         const textChar = document.createTextNode(characterStyles[i].title);
         pThree = document.createElement("p");
         pThree.classList.add("character-name", `${characterStyles[i].alignment}-characterName`);
