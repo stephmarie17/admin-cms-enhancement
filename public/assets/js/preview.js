@@ -1,5 +1,3 @@
-console.log("CONNECTED");
-
 let messages = [];
 let characters = [];
 let dialog = [];
@@ -22,7 +20,6 @@ function handleFileLoad(event) {
     document.getElementById('file').textContent = event.target.result;
     const data = Papa.parse(event.target.result);
     messages.push(data);
-    console.log(messages);
 }
 
 // Gets relevant data from CSV in order to apply styling for preview
@@ -35,14 +32,10 @@ async function previewEpisode() {
             dialog.push(element[1]);
             
         }
-        console.log(characters)
         $.ajax("/api/ChatStories/episode-csv-import", {
             type: "POST",
             data: {characters},
             success:  function(response){
-                console.log("response from ajax call", response);
-                console.log (typeof response[0]);
-
                 if (response[0] instanceof Object) {
                     displayUpload(response);
                 } else {
@@ -78,10 +71,8 @@ function getStoryAutoFill(err) {
         dataType: 'json',
         // data: storyInfo,
         success: function(response) {
-            console.log("response from story ajax call", response);
             formAutoFill(response);
             storyTheme.push(response);
-            console.log("Story Theme", storyTheme);
         }
     })
     if (err) console.log(err);
@@ -124,7 +115,6 @@ const deviceDisplay = document.getElementById('preview-device');
 
 deviceDisplay.onchange = function() {
     const selection = document.getElementById('preview-device').value;
-    console.log(selection);
     const previewContainer = document.getElementById('preview-texts');
     switch (selection) {
         case 'iPhone X':

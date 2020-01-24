@@ -6,6 +6,7 @@ const request = require("request");
 
 let data;
 
+// Request to get the story title and theme
 router.get("/api/ChatStories/story-template-theme", function(req,res) {
 
 const URL =
@@ -31,12 +32,11 @@ request({
 let storyInfo = {};
 const StoryInfo = require("../lib/storyInfo.js");
 
+// Constructs object to export the story title and display theme
 function getStoryInfo() {
-    console.log("We are getting story info!");
     const storyData = data[0];
     const {title, bgColor, fgColor} = storyData;
     storyInfo = new StoryInfo (title, bgColor, fgColor);
-    console.log(storyInfo);
     return storyInfo;
 }
 });

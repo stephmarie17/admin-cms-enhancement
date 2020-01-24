@@ -5,6 +5,7 @@ const fs            = require("file-system");
 const PORT          = process.env.PORT || 8080;
 const app           = express();
 
+// Authentication
 app.use((req, res, next) => {
   const auth = { login: 'mammoth', password: 'y@rnAdm1n_' };
   // parse login and password from headers
@@ -20,6 +21,7 @@ app.use((req, res, next) => {
   res.status(401).send('Authentication required.'); // custom message
 });
 
+// Data parsing
 app.use(
     express.urlencoded({
       extended: true
@@ -39,11 +41,6 @@ app.use(
 app.use(express.json());
 app.use(express.static("public"));
 
-// const controllers = fs.readdirSync(path.join(__dirname, 'controllers'))
-// controllers.forEach(controller => {
-//   app.use(`/${controller}`, require(`./controllers/${controller}`))
-// })
-
 const previewRoute = require("./controllers/preview");
 const storyRoute = require("./controllers/storytemplate");
 
@@ -53,8 +50,6 @@ app.use(storyRoute);
 app.get("/", function(req, res) {
   res.json(path.join(__dirname, "public/index.html"));
 });
-
-
 
 app.listen(PORT, function() {
     console.log("Server listening on: http://localhost:" + PORT);
