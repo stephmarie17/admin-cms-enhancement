@@ -109,6 +109,9 @@ function displayUpload(characterStyles) {
         previewContainer.appendChild(pThree);
         previewContainer.appendChild(pTwo).appendChild(pOne);
     }
+    pLast = document.createElement("p");
+    previewContainer.appendChild(pLast);
+
 };
 
 const deviceDisplay = document.getElementById('preview-device');

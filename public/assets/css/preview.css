@@ -43,7 +43,7 @@ p.undefined-alignment.undefined-bubble {
     margin-right: 20px;
     padding: 12px;
     max-width: fit-content;
-    border-radius: 40px 40px 40px 10px;
+    border-radius: 40px 40px 40px 10px!important;
     position: relative;
     font-size: 18px;
 }
@@ -61,7 +61,7 @@ p.undefined-alignment.undefined-bubble {
     margin-left: auto;
     margin-right: 10px;
     padding: 12px;
-    border-radius: 40px 40px 10px 40px;
+    border-radius: 40px 40px 10px 40px!important;
     position: relative;
     font-size: 18px;
 }
@@ -81,11 +81,9 @@ p.undefined-alignment.undefined-bubble {
 }
 
 /* Trying to prevent the first initial icon to take on weird formatting */
-.ui.cards > .card > :first-child, .ui.card > :first-child {
-  border-radius: 0em 0em 0em 0em !important;
-  border-top: none !important;
+.ui.cards > .card > :last-child, .ui.card > :last-child {
+    border-radius: 0;
 }
-
 
 .character-name{
     color: #d4c7c7;
