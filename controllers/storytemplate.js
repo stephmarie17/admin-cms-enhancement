@@ -10,13 +10,13 @@ let data;
 router.get("/api/ChatStories/story-template-theme", function(req,res) {
 
 const URL =
-'https://live-api-stage.yarnapp.co/api/ChatStories?filter=%7B%22where%22:%7B%22id%22:2%7D,%22include%22:%22chatStoryPeople%22%7D';
+'dev-test-url'
 
 request({
     method: 'GET',
     uri: URL,
     headers: {
-        Authorization: 'ocKE1WN6EE3aSi3olODQxhP1qPUByw3oksOSOvKrjF0I0EofhYCkKAgWe6b1ivaH'
+        Authorization: 'dev-test-header'
     }
 },
     function(err, _, body) {

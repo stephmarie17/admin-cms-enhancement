@@ -10,13 +10,13 @@ let data;
 router.get("/api/ChatStories/all", function(req,res) {
 
 const URL =
-'https://live-api-stage.yarnapp.co/api/ChatStories?filter=%7B%22include%22:%7B%22relation%22:%22chatStoryTags%22,%22scope%22:%7B%22fields%22:%5B%22name%22%5D%7D%7D%7D';
+'dev-test-URL';
 
 request({
     method: 'GET',
     uri: URL,
     headers: {
-        Authorization: 'd6GqEElL0yRMJsN0ze8FHb5tgmmMEgyCipzRCLtgSMMlEhc7gZEEpPd90LMx723h'
+        Authorization: 'dev-test-header'
     }
 },
     function(err, _, body) {
